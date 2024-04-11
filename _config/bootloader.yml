@@ -1,0 +1,6 @@
+---
+name: bootloader
+---
+SilverStripe\CMS\Controllers\ContentController:
+  extensions:
+    - minimalic\BootLoader\Extensions\BootLoaderControllerExtension

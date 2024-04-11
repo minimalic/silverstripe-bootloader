@@ -29,7 +29,14 @@ Or use your base URL with:
 
 ## Customization
 
+
+### Getting tools
+
 If you need to inject your own Bootstrap variables and overrides, you should start with installing `sass`, `nodemon` and `postcss` using `npm`.
+
+
+### Compiling Bootstrap
+
 Once installed, you can compile new customized Bootstrap CSS file using:
 
 ```sh
@@ -42,12 +49,17 @@ or alternatively:
 npm --prefix ./vendor/minimalic/silverstripe-bootloader/client/src/ run-script watch
 ```
 
-Compiling requires these two files in your directory:
+Compiling requires these two files in your `themes/main/scss/` directory:
+
 `_bs-variables.scss`
+
 `_bs-variables-end.scss`
 
-The first one will be loaded at the beginning right after `@import "functions";` and the second one after all other Bootstrap modules.
 
+(The first one will be loaded at the beginning right after `@import "functions";` and the second one after all other Bootstrap modules.)
+
+
+### Compiling own CSS
 
 The `run-script watch` will also monitor and compile your own SCSS file named `style.scss` located at `themes/main/scss/` into `themes/main/css/`.
 Warning: your existing (if any) `themes/main/css/style.css` will be overwritten!

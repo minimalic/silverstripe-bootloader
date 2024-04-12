@@ -41,19 +41,20 @@ The customization step is optional. You can override standard [Bootstrap variabl
 If you need to inject your own Bootstrap variables and overrides, you should start with installing `sass`, `nodemon` and `postcss` using `npm`.
 
 
-### Customized Bootstrap Variables files
+### Required SCSS theme files
 
-Compiling requires these two files in your `themes/main/scss/` directory:
-
-`_bs-variables.scss`
-
-`_bs-variables-end.scss`
+Compiling requires these three files in your `themes/main/scss/` directory:
+- `_bs-variables.scss`
+- `_bs-variables-end.scss`
+- `style.scss`
 
 The first one will be loaded at the beginning right after `@import "functions";` and the second one after all other Bootstrap modules.
 You can create variables overrides inside the SCSS files.
 
+The `style.scss` is your own theme stylesheet.
 
-### Compiling Bootstrap
+
+### Compiling custom Bootstrap
 
 Now you can compile new customized Bootstrap CSS file using:
 
@@ -72,7 +73,7 @@ A new `bootstrap-custom.css` will be generated (and overwritten) inside your `th
 The original `bootstrap.min.css` will automatically get replaced by your customized and compiled Bootstrap version.
 
 
-### Compiling own CSS
+### Compiling custom theme CSS
 
 The `run-script watch` will also monitor and compile your own SCSS file named `style.scss` located at `themes/main/scss/` into `themes/main/css/`.
 Your existing `themes/main/css/style.css` (if any) will be overwritten.

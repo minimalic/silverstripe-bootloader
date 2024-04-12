@@ -35,19 +35,7 @@ Or use your base URL with:
 If you need to inject your own Bootstrap variables and overrides, you should start with installing `sass`, `nodemon` and `postcss` using `npm`.
 
 
-### Compiling Bootstrap
-
-Once installed, you can compile new customized Bootstrap CSS file using:
-
-```sh
-cd vendor/minimalic/silverstripe-bootloader/client/src/
-npm run-script watch
-```
-or alternatively:
-
-```sh
-npm --prefix ./vendor/minimalic/silverstripe-bootloader/client/src/ run-script watch
-```
+### Customized Bootstrap Variables files
 
 Compiling requires these two files in your `themes/main/scss/` directory:
 
@@ -55,14 +43,33 @@ Compiling requires these two files in your `themes/main/scss/` directory:
 
 `_bs-variables-end.scss`
 
+The first one will be loaded at the beginning right after `@import "functions";` and the second one after all other Bootstrap modules.
+You can create variables overrides inside the SCSS files.
 
-(The first one will be loaded at the beginning right after `@import "functions";` and the second one after all other Bootstrap modules.)
+
+### Compiling Bootstrap
+
+Now you can compile new customized Bootstrap CSS file using:
+
+```sh
+cd vendor/minimalic/silverstripe-bootloader/client/src/
+npm run-script watch
+```
+or alternatively directly from Silverstripe root directory:
+
+```sh
+npm --prefix ./vendor/minimalic/silverstripe-bootloader/client/src/ run-script watch
+```
+
+A new `bootstrap-custom.css` will be generated (and overwritten) inside your `themes/main/css/` directory.
+
+The original `bootstrap.min.css` will automatically get replaced by your customized and compiled Bootstrap version.
 
 
 ### Compiling own CSS
 
 The `run-script watch` will also monitor and compile your own SCSS file named `style.scss` located at `themes/main/scss/` into `themes/main/css/`.
-Warning: your existing (if any) `themes/main/css/style.css` will be overwritten!
+Warning: your existing `themes/main/css/style.css` (if any) will be overwritten!
 
 
 ## License

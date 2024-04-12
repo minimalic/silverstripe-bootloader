@@ -4,11 +4,11 @@
   "style": "../dist/css/style.css",
   "scripts": {
     "watch": "nodemon --exec \"npm-run-all sass-bs-once sass-once css-bs-prefix css-prefix\"",
-    "sass-bs-once": "sass scss/bootstrap-custom.scss ../dist/css/bootstrap-custom.css",
+    "sass-bs-once": "sass scss/bootstrap-custom.scss ../../../../../themes/main/css/bootstrap-custom.css",
     "sass-once": "sass ../../../../../themes/main/scss/style.scss ../../../../../themes/main/css/style.css",
-    "sass-bs-watch": "sass --watch scss/bootstrap-custom.scss ../dist/css/bootstrap-custom.css",
+    "sass-bs-watch": "sass --watch scss/bootstrap-custom.scss ../../../../../themes/main/css/bootstrap-custom.css",
     "sass-watch": "sass --watch ../../../../../themes/main/scss/style.scss ../../../../../themes/main/css/style.css",
-    "css-bs-prefix": "postcss --use autoprefixer --replace \"../dist/css/*.css\"",
+    "css-bs-prefix": "postcss --use autoprefixer --replace \"../../../../../themes/main/css/*.css\"",
     "css-prefix": "postcss --use autoprefixer --replace \"../../../../../themes/main/css/*.css\""
   }
 }

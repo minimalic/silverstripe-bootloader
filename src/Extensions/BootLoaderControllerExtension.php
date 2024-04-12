@@ -3,22 +3,25 @@
 namespace minimalic\BootLoader\Extensions;
 
 use SilverStripe\Core\Extension;
-
+use SilverStripe\Control\Director;
 use SilverStripe\View\Requirements;
 
 class BootLoaderControllerExtension extends Extension {
 
-    // public function onAfterInit()
     public function onBeforeInit()
-    // public function init()
     {
-        // parent::init();
-        // Requirements::set_write_js_to_body(false);
-
+        // Load the minified Bootstrap JS
         Requirements::javascript('minimalic/silverstripe-bootloader: client/dist/js/bootstrap.bundle.min.js', ["async" => true,]);
 
-        Requirements::css('minimalic/silverstripe-bootloader: client/dist/css/bootstrap-custom.css');
+        // Get custom themed Bootstrap CSS path
+        $base = Director::baseFolder();
+        $themedBootstrapPath = $base . '/themes/main/css/bootstrap-custom.css';
 
-        // Requirements::set_force_js_to_bottom(true);
+        // Check if the custom compiled Bootstrap CSS file exists, else load the minified Bootstrap CSS
+        if (file_exists($themedBootstrapPath)) {
+            Requirements::css('themes/main/css/bootstrap-custom.css');
+        } else {
+            Requirements::css('minimalic/silverstripe-bootloader: client/dist/css/bootstrap.min.css');
+        }
     }
 }

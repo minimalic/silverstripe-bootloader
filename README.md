@@ -80,7 +80,7 @@ Your existing `themes/main/css/style.css` (if any) will be overwritten.
 
 ## License
 
-See [License](LICENSE.md)
+See [License](LICENSE)
 
 Copyright (c) 2024, minimalic.com - Sebastian Finke
 All rights reserved.

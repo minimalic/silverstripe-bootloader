@@ -29,6 +29,12 @@ Or use your base URL with:
 
 ## Customization
 
+### About customization
+
+The customization step is optional. You can override standard [Bootstrap variables](https://github.com/twbs/bootstrap/tree/v5.3.3/scss) with `_bs-variables.scss` inside your `themes/main/scss/` directory.
+> [!WARNING]
+> Customization may modify all of your CSS files inside `themes/main/css/` (if any) by using `css-prefix` and other tools needed to compile Bootstrap.
+
 
 ### Getting tools
 
@@ -69,7 +75,7 @@ The original `bootstrap.min.css` will automatically get replaced by your customi
 ### Compiling own CSS
 
 The `run-script watch` will also monitor and compile your own SCSS file named `style.scss` located at `themes/main/scss/` into `themes/main/css/`.
-Warning: your existing `themes/main/css/style.css` (if any) will be overwritten!
+Your existing `themes/main/css/style.css` (if any) will be overwritten.
 
 
 ## License

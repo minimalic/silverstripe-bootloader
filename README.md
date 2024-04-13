@@ -62,7 +62,7 @@ Now you can compile new customized Bootstrap CSS file using:
 cd vendor/minimalic/silverstripe-bootloader/client/src/
 npm run-script watch
 ```
-or alternatively directly from Silverstripe root directory:
+or alternatively from Silverstripe's root directory:
 
 ```sh
 npm --prefix ./vendor/minimalic/silverstripe-bootloader/client/src/ run-script watch
